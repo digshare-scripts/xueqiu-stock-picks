@@ -49,8 +49,9 @@ export default script<Payload, Storage>(async (payload, {storage}) => {
 
   let apiFetchOptions = {
     headers: {
-      referer: PAGE_URL.replace(/#.*/, ''),
-      cookie: cookieJar.getCookieStringSync(STOCKS_API_URL),
+      'User-Agent': UA,
+      Referer: PAGE_URL.replace(/#.*/, ''),
+      Cookie: cookieJar.getCookieStringSync(STOCKS_API_URL),
     },
   };
 
